@@ -1,5 +1,10 @@
-playCount := 114514
+package main
+import "fmt"
 
-if playCount {
-	fmt.Println("热门视频，运营同学开始探头")
+func main() {
+	playCount := 114514
+
+	if playCount {
+		fmt.Println("热门视频，运营同学开始探头")
+	}
 }
