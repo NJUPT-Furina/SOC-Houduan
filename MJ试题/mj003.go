@@ -1,10 +1,9 @@
 package main
-import "fmt"
 
 func main() {
-	playCount := 114514
-
-	if playCount {
-		fmt.Println("热门视频，运营同学开始探头")
-	}
+	countName := "B26040721"
+	name := "NJUPT-furina"
+	password := "26040721"
+	loginDay := 0
+	isNewuser := false
 }
