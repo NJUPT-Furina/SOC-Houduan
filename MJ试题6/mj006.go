@@ -10,7 +10,6 @@ func main() {
 	validateCount(countName, password)
 	password = encryptPassword(password)
 	buildWelcomeMessage(countName)
-	fmt.Printf("加密后的密码为：%s\n", password)
 }
 func validateCount(countName string, password string) {
 	if countName == "" && len(password) < 6 {
