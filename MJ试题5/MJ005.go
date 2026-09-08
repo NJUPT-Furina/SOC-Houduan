@@ -12,7 +12,6 @@ func main() {
 			continue
 		}
 		if countName == "risk_user" {
-			fmt.Println("账号风险拦截")
 			break
 		}
 
