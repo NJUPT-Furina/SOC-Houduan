@@ -22,5 +22,5 @@ func main() {
 		fmt.Println("登录次数格式错误")
 	}
 
-	fmt.Printf("账号校验通过")
+	fmt.Println("账号校验通过")
 }
