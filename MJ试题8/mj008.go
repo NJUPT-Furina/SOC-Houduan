@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 )
 
 type Count struct {
@@ -34,13 +35,15 @@ func encryptPassword(password string) string {
 }
 
 func validateCountStruct(countName string, password string) {
-	if countName == "" && len(password) < 6 {
+	if countName == "" || len(password) < 6 {
 		fmt.Println("账号名或密码不合法！")
+		os.Exit(1)
 	}
 }
 
 func validateCount(isBlocked bool) {
 	if isBlocked {
 		fmt.Println("账号风险拦截")
+		os.Exit(1)
 	}
 }

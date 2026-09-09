@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 )
 
 func main() {
@@ -14,6 +15,7 @@ func main() {
 func validateCount(countName string, password string) {
 	if countName == "" || len(password) < 6 {
 		fmt.Println("账号名或密码不合法！")
+		os.Exit(1)
 	}
 }
 func encryptPassword(password string) string {
