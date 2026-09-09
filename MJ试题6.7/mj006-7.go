@@ -6,7 +6,7 @@ import (
 
 func main() {
 	countName := "B26040721"
-	password := "26040721cqx"
+	password := "26040"
 	validateCount(countName, password)
 	password = encryptPassword(password)
 	buildWelcomeMessage(countName)
