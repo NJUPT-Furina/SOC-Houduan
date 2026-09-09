@@ -24,5 +24,5 @@ func encryptPassword(password string) string {
 	return string(runes)
 }
 func buildWelcomeMessage(countName string) {
-	fmt.Printf("Hello,world!账号:%s诞生了\n", countName)
+	fmt.Printf("Hello,world!慢脚账号创建完成，账号:%s诞生了\n", countName)
 }
