@@ -12,7 +12,7 @@ func main() {
 	buildWelcomeMessage(countName)
 }
 func validateCount(countName string, password string) {
-	if countName == "" && len(password) < 6 {
+	if countName == "" || len(password) < 6 {
 		fmt.Println("账号名或密码不合法！")
 	}
 }
