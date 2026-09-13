@@ -23,6 +23,7 @@ func main() {
 	}
 	count.Password = encryptPassword(count.Password)
 	validateCountStruct(count.CountName, count.Password)
+	validateCount(count.IsnotBlocked)
 	fmt.Printf("账号名: %s\n姓名: %s\n密码: %s\n帐号状态: %t\n账户序号：%03d\n", count.CountName, count.Name, count.Password, count.IsnotBlocked, count.Number)
 }
 
