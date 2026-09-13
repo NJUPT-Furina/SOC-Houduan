@@ -33,8 +33,8 @@ func main() {
 			Number:    003,
 		},
 	}
-	p := &counts[1]
-	p.Status = "active"
+	c := &counts[1]
+	c.Status = "active"
 	for _, count := range counts {
 		fmt.Printf("账号名：%s\n帐号状态：%s\n", count.CountName, count.Status)
 	}
