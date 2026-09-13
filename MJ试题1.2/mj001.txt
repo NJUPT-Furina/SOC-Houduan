@@ -1,0 +1,30 @@
+语言版本：go version go1.27.1 windows/amd64
+运行命令：输出hello world
+文件名：mj002.go
+
+
+
+
+
+我想完成一个        的项目，目前我写了这样的代码：
+
+
+
+出现了如下报错：
+
+
+
+
+我尝试过用       的方法解决，但是并没有用，我怀疑是       的问题，你能帮我看看吗
+
+
+
+报错：cannot use "666" (type string) as type int in assignment
+解释：给666加引号当字符串了  hyw()
+
+
+
+函数名：Contains
+作用：判断字符串是否包含子串
+参数：s string、substr string
+返回值：bool
