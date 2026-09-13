@@ -6,24 +6,24 @@ import (
 )
 
 type Count struct {
-	CountName string
-	Name      string
-	Password  string
-	IsBlocked bool
-	Number    int
+	CountName    string
+	Name         string
+	Password     string
+	IsnotBlocked bool
+	Number       int
 }
 
 func main() {
 	count := Count{
-		CountName: "B26040721",
-		Name:      "cqx",
-		Password:  "26040721cqx",
-		IsBlocked: false,
-		Number:    001,
+		CountName:    "B26040721",
+		Name:         "cqx",
+		Password:     "26040721cqx",
+		IsnotBlocked: true,
+		Number:       001,
 	}
 	count.Password = encryptPassword(count.Password)
 	validateCountStruct(count.CountName, count.Password)
-	fmt.Printf("账号信息: %+v\n", count)
+	fmt.Printf("账号名: %s\n姓名: %s\n密码: %s\n帐号状态: %t\n账户序号：%03d\n", count.CountName, count.Name, count.Password, count.IsnotBlocked, count.Number)
 }
 
 func encryptPassword(password string) string {
@@ -41,9 +41,10 @@ func validateCountStruct(countName string, password string) {
 	}
 }
 
-func validateCount(isBlocked bool) {
-	if isBlocked {
+func validateCount(isnotBlocked bool) {
+	if !isnotBlocked {
 		fmt.Println("账号风险拦截")
 		os.Exit(1)
 	}
+
 }
