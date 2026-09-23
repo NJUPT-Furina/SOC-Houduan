@@ -2,4 +2,4 @@ module example.com/MJ10
 
 go 1.27.1
 
-require golang.org/x/crypto v0.57.0 // indirect
+require golang.org/x/crypto v0.57.0
