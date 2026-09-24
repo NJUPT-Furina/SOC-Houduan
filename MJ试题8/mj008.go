@@ -1,8 +1,8 @@
 package main
 
 import (
+	"errors"
 	"fmt"
-	"os"
 )
 
 type Count struct {
@@ -22,8 +22,14 @@ func main() {
 		Number:       001,
 	}
 	count.Password = encryptPassword(count.Password)
-	validateCountStruct(count.CountName, count.Password)
-	validateCount(count.IsnotBlocked)
+	if err := validateCountStruct(count.CountName, count.Password); err != nil {
+		fmt.Println("验证账户失败:", err)
+		return
+	}
+	if err := validateCount(count.IsnotBlocked); err != nil {
+		fmt.Println("验证账户失败:", err)
+		return
+	}
 	fmt.Printf("账号名: %s\n姓名: %s\n密码: %s\n帐号状态: %t\n账户序号：%03d\n", count.CountName, count.Name, count.Password, count.IsnotBlocked, count.Number)
 }
 
@@ -35,17 +41,16 @@ func encryptPassword(password string) string {
 	return string(runes)
 }
 
-func validateCountStruct(countName string, password string) {
+func validateCountStruct(countName string, password string) error {
 	if countName == "" || len(password) < 6 {
-		fmt.Println("账号名或密码不合法！")
-		os.Exit(1)
+		return errors.New("账号名或密码不合法！")
 	}
+	return nil
 }
 
-func validateCount(isnotBlocked bool) {
+func validateCount(isnotBlocked bool) error {
 	if !isnotBlocked {
-		fmt.Println("账号风险拦截")
-		os.Exit(1)
+		return errors.New("账号风险拦截")
 	}
-
+	return nil
 }

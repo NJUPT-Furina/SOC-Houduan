@@ -3,7 +3,6 @@ package main
 import (
 	"errors"
 	"fmt"
-	"os"
 
 	"golang.org/x/crypto/bcrypt"
 )
@@ -47,9 +46,9 @@ func (c *Count) UpdatePassword(newPassword string) error {
 	return nil
 }
 
-func validateCount(status string) {
+func validateCount(status string) error {
 	if status == "blocked" {
-		fmt.Println("账号风险拦截")
-		os.Exit(1)
+		return errors.New("账号风险拦截")
 	}
+	return nil
 }
