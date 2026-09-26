@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	countName := " cqx001 "
+	countName := "                       cqx001 "
 	password := "26040721cqx"
 	cleanCountName := strings.TrimSpace(countName)
 
