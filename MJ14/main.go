@@ -45,5 +45,4 @@ func main() {
 	}
 
 	fmt.Printf("共创建账号：%d个", count)
-	fmt.Println(done)
 }
