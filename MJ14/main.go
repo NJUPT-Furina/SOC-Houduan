@@ -20,7 +20,7 @@ func main() {
 		{AccountName: "cqx004", Name: "ttdr", password: "26040724cqx", result: true},
 		{AccountName: "cqx005", Name: "cqx14138", password: "26040725cqx", result: true},
 	}
-	count := 0
+	done := make(chan Account, len(accounts))
 	var wg sync.WaitGroup
 	for _, account := range accounts {
 		account := account
@@ -29,10 +29,20 @@ func main() {
 		go func() {
 			defer wg.Done()
 			fmt.Println("正在创建账号：", account.AccountName)
+			done <- account
 		}()
-
-		count = count + 1
 	}
 	wg.Wait()
+
+	go func() {
+		wg.Wait()
+		close(done)
+	}()
+
+	count := 0
+	for range done {
+		count++
+	}
+
 	fmt.Printf("共创建账号：%d个", count)
 }
