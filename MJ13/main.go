@@ -24,7 +24,7 @@ func main() {
 		return
 	}
 
-	data, err := os.ReadFile("comment.txt")
+	data, err := os.ReadFile("slowfoot_accounts.txt")
 	if err != nil {
 		fmt.Println("读取文件失败：", err)
 		return
