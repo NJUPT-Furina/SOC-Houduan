@@ -9,6 +9,7 @@ func main() {
 	for _, user := range users {
 		if user == "大会员用户" {
 			fmt.Println("观看VIP视频")
+			return
 		}
 
 		fmt.Println("观看普通视频")
