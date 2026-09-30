@@ -32,18 +32,19 @@ func main() {
 		fmt.Println("0. 退出系统")
 		reader := bufio.NewReader(os.Stdin)
 		input := readString(reader, "请键入操作前的编号进入操作：")
-		if input == "1" {
+		switch input {
+		case "1":
 			addContent(reader)
-		} else if input == "2" {
+		case "2":
 			listContents()
-		} else if input == "3" {
+		case "3":
 			showTrafficScores()
-		} else if input == "4" {
+		case "4":
 			searchContents(reader)
-		} else if input == "0" {
+		case "0":
 			fmt.Println("再见，下班收工")
 			return
-		} else {
+		default:
 			fmt.Println("无效选项，请重新选择")
 		}
 	}
