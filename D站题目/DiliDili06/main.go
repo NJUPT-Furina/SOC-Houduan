@@ -6,12 +6,18 @@ import (
 
 func main() {
 	num := 121
-	if num == reverseInt(num) {
-		fmt.Println(true)
+	reversenum, err := reverseInt(num)
+	if err != nil {
+		fmt.Println("输入不正确！")
+		return
 	}
+	if num == reversenum {
+		fmt.Println("True")
+	}
+	fmt.Println("False")
 
 }
-func reverseInt(n int) int {
+func reverseInt(n int) (int, error) {
 	reversed := 0
 	for {
 		digit := n % 10
@@ -19,6 +25,5 @@ func reverseInt(n int) int {
 		n /= 10
 		break
 	}
-
-	return reversed
+	return reversed, nil
 }
