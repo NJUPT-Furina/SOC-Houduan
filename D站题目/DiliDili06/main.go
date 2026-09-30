@@ -13,6 +13,7 @@ func main() {
 	}
 	if num == reversenum {
 		fmt.Println("True")
+		return
 	}
 	fmt.Println("False")
 
