@@ -48,6 +48,8 @@ func main() {
 			fmt.Println("再见，下班收工")
 			return
 		}
-		fmt.Println("无效选项，请重新选择")
+		else{
+			fmt.Println("无效选项，请重新选择")
+		}
 	}
 }
