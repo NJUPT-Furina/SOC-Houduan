@@ -47,8 +47,7 @@ func main() {
 		if input == "0" {
 			fmt.Println("再见，下班收工")
 			return
-		}
-		else{
+		} else {
 			fmt.Println("无效选项，请重新选择")
 		}
 	}
