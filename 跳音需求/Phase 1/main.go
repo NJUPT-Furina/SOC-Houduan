@@ -34,17 +34,13 @@ func main() {
 		input := readString(reader, "请键入操作前的编号进入操作：")
 		if input == "1" {
 			addContent(reader)
-		}
-		if input == "2" {
+		} else if input == "2" {
 			listContents()
-		}
-		if input == "3" {
+		} else if input == "3" {
 			showTrafficScores()
-		}
-		if input == "4" {
+		} else if input == "4" {
 			searchContents(reader)
-		}
-		if input == "0" {
+		} else if input == "0" {
 			fmt.Println("再见，下班收工")
 			return
 		} else {
