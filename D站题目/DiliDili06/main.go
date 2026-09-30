@@ -19,11 +19,10 @@ func main() {
 }
 func reverseInt(n int) (int, error) {
 	reversed := 0
-	for {
+	for n > 0 {
 		digit := n % 10
 		reversed = reversed*10 + digit
 		n /= 10
-		break
 	}
 	return reversed, nil
 }
