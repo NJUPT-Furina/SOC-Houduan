@@ -30,4 +30,7 @@ func main() {
 		w.Header().Set("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(map[string]string{"Status": "成功"})
 	})
+
+	fmt.Println("HTTP 服务启动：http://127.0.0.1:8080")
+	http.ListenAndServe(":8080", nil)
 }
