@@ -1,12 +1,15 @@
 package main
 
-import("fmt")
+import (
+	"fmt"
+)
 
-func main{
-	playCounts := []int{120,350,400,200,150,500,280}
-	for _ ,range playCounts{
-		total += playcounts
+func main() {
+	playCounts := []int{120, 350, 400, 200, 150, 500, 280}
+	total := 0
+	for _, playCount := range playCounts {
+		total += playCount
 	}
 
-	fmt.Println("总播放量为%d\n", total)
+	fmt.Printf("总播放量为%d\n", total)
 }
