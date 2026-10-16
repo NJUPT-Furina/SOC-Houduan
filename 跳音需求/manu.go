@@ -33,10 +33,9 @@ func addContent(reader *bufio.Reader) {
 	nextID++
 	content.Title = readString(reader, "请输入标题：")
 	content.Author = readString(reader, "请输入作者：")
-	var platformName string
 	for {
-		platformName = readString(reader, "请输入平台（d站/跳音/小蓝书/慢脚）：")
-		if GetPlatform(platformName) != nil {
+		content.Platform = readString(reader, "请输入平台（d站/跳音/小蓝书/慢脚）：")
+		if GetPlatform(content.Platform) != nil {
 			break
 		}
 		fmt.Println("❌ 平台名无效，请重新输入")
@@ -52,7 +51,7 @@ func addContent(reader *bufio.Reader) {
 	fmt.Printf("编号：%d\n", content.ID)
 	fmt.Printf("标题：%s\n", content.Title)
 	fmt.Printf("作者：%s\n", content.Author)
-	fmt.Printf("平台：%s\n", platformName)
+	fmt.Printf("平台：%s\n", content.Platform)
 	fmt.Printf("播放量：%d\n", content.playCount)
 	fmt.Printf("点赞数：%d\n", content.likeCount)
 	fmt.Printf("评论数：%d\n", content.commentCount)
